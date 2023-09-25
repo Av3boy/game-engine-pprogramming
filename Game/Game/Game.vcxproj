@@ -133,7 +133,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\Core\src\IApplication.cpp" />
     <ClCompile Include="..\..\Core\src\Timer.cpp" />
-    <ClCompile Include="..\Game\main.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="TheApp.cpp" />
   </ItemGroup>
   <ItemGroup>

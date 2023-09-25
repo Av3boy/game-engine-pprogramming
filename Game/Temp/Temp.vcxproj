@@ -127,6 +127,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Core\src\IApplication.cpp" />
+    <ClCompile Include="..\..\Core\src\Timer.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="TheApp.cpp" />
   </ItemGroup>
