@@ -14,38 +14,26 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="core">
-      <UniqueIdentifier>{477dbbf7-8e6f-410b-b526-c19c662da404}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="core\include">
-      <UniqueIdentifier>{a0db1b99-af83-40dc-9915-bdf651f72731}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="core\src">
-      <UniqueIdentifier>{fc60256f-9561-4318-87fc-8b7e81323e71}</UniqueIdentifier>
+      <UniqueIdentifier>{c1efc5d8-e68c-4c42-bc11-753ad1c2500f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Core\src\IApplication.cpp">
-      <Filter>core\src</Filter>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TheApp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Core\src\Timer.cpp">
-      <Filter>core\src</Filter>
+      <Filter>core</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="..\..\Core\src\IApplication.cpp">
+      <Filter>core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Core\include\IApplication.h">
-      <Filter>core\include</Filter>
-    </ClInclude>
     <ClInclude Include="TheApp.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Core\include\Timer.h">
-      <Filter>core\include</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -20,6 +20,7 @@ bool TheApp::OnCreate()
 	return true;
 }
 
+
 bool TheApp::OnKeyDown(uint32_t keyCode)
 {
 	if (keyCode == KEY_ESC)
