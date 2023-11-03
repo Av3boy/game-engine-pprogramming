@@ -154,6 +154,7 @@
     <ClCompile Include="..\core\src\IApplication_win32.cpp" />
     <ClCompile Include="..\core\src\OpenGLRenderer.cpp" />
     <ClCompile Include="..\core\src\Timer.cpp" />
+    <ClCompile Include="Ball.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="TheApp.cpp" />
   </ItemGroup>
@@ -162,7 +163,13 @@
     <ClInclude Include="..\core\include\IRenderer.h" />
     <ClInclude Include="..\core\include\OpenGLRenderer.h" />
     <ClInclude Include="..\core\include\Timer.h" />
+    <ClInclude Include="Ball.h" />
     <ClInclude Include="TheApp.h" />
+    <ClInclude Include="Vertex.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shader.frag" />
+    <None Include="shader.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

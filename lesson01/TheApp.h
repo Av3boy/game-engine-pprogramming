@@ -12,12 +12,26 @@
 
 #include "../core/include/IApplication.h"
 #include "../core/include/OpenGLRenderer.h"
+#include "Ball.h"
 
+#include <queue>
+#include <algorithm>
+#include <random>
 
 class TheApp : public IApplication
 {
 public:
-	TheApp();
+
+	int GetRandomNumber(int min, int max)
+	{
+		std::mt19937 gen(rd());
+		std::uniform_int_distribution dis(min, max);
+		return dis(gen);
+	}
+
+	void TheApp::AddBallToQueue();
+
+	void TheApp::OnBubbleCollide();
 
 	/**
 	 * OnCreate
@@ -57,24 +71,6 @@ protected:
 	bool OnMouseBegin(int32_t buttonIndex, const glm::vec2& point) override;
 
 	/**
-	 * OnMouseDrag
-	 * event when mouse is dragged
-	 * @param iButtonIndex index of the mouse button (0 based)
-	 * @param vPoint event coordinate in pixels
-	 * @return true if event was handled by the receiver
-	 */
-	bool OnMouseDrag(int32_t buttonIndex, const glm::vec2& point) override;
-
-	/**
-	 * OnMouseEnd
-	 * event when mouse button is lifted up
-	 * @param iButtonIndex index of the mouse button (0 based)
-	 * @param vPoint event coordinate in pixels
-	 * @return true if event was handled by the receiver
-	 */
-	bool OnMouseEnd(int32_t buttonIndex, const glm::vec2& point) override;
-
-	/**
 	 * OnKeyDown
 	 * key down event
 	 * @param keyCode key code
@@ -90,7 +86,43 @@ private:
 	 */
 	OpenGLRenderer* GetOpenGLRenderer() { return static_cast<OpenGLRenderer*>(GetRenderer()); }
 
-private:
+	bool IsGameWon() const
+	{
+		for (auto const& row : m_grid)
+		{
+			for (auto cellValue : row)
+			{
+				if (cellValue != 0)
+					return false;
+			}
+		}
+
+		return true;
+	}
+
+	bool IsGameLost() const
+	{
+		auto lastRow = m_grid.back();
+		for (auto cellValue : lastRow)
+		{
+			if (cellValue != 0)
+				return true;
+		}
+
+		return false;
+	}
+
 	// app data
+	std::vector<int> m_possibleBallTypes;
+	std::queue<int> m_queue; // ball types
+	std::unique_ptr<Ball> m_currentBall;
+
+	std::vector<std::vector<int>> m_grid;	
+	int gridWidth = 10;
+	int gridHeight = 10;
+
+	GLuint m_program = 0;
+
+	std::random_device rd;
 };
 
